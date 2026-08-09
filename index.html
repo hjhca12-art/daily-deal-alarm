@@ -19,6 +19,22 @@ h1 span{color:#25F0D4}
 .sub{margin-top:10px;color:#8FB3B8;font-size:14px}
 .note{margin:20px 0 8px;padding:12px 14px;border:1px solid #1d4149;
  border-radius:10px;background:#08222833;color:#8FB3B8;font-size:12px}
+.tools{position:sticky;top:0;z-index:5;padding:12px 0 10px;
+ background:linear-gradient(#03161A 78%,#03161A00)}
+.search{width:100%;padding:12px 14px;border-radius:12px;font-size:15px;
+ color:#FFF3E2;background:#082228;border:1px solid #1d4149;outline:none}
+.search::placeholder{color:#5d7d83}
+.search:focus{border-color:#25F0D4}
+.chips{display:flex;gap:7px;overflow-x:auto;margin-top:10px;
+ padding-bottom:2px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;padding:7px 13px;border-radius:999px;font-size:12.5px;
+ font-weight:700;cursor:pointer;white-space:nowrap;color:#8FB3B8;
+ background:#082228;border:1px solid #1d4149}
+.chip.on{background:#FF6A00;border-color:#FF6A00;color:#fff}
+.count{margin-top:9px;color:#5d7d83;font-size:11.5px}
+.empty{display:none;margin-top:28px;text-align:center;color:#6f8f95;
+ font-size:13px}
 .day{margin:30px 0 4px;display:flex;align-items:center;gap:10px}
 .day h2{font-size:15px;font-weight:800;letter-spacing:-.01em}
 .day .tag{font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;
@@ -60,189 +76,18 @@ footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
     이에 따른 일정액의 수수료를 제공받습니다.
   </div>
 
+  <div class="tools">
+    <input id="q" class="search" type="search" autocomplete="off"
+           placeholder="상품 검색 (예: 김치, 커피)">
+    <div class="chips"><button class="chip on" data-cat="">전체 30</button><button class="chip" data-cat="식품">식품 19</button><button class="chip" data-cat="생활">생활 1</button><button class="chip" data-cat="뷰티">뷰티 3</button><button class="chip" data-cat="건강">건강 1</button><button class="chip" data-cat="계절">계절 2</button><button class="chip" data-cat="패션">패션 1</button><button class="chip" data-cat="기타">기타 3</button></div>
+    <div class="count"><span id="count"></span> 표시 중</div>
+  </div>
+  <div id="empty" class="empty">조건에 맞는 상품이 없습니다.</div>
+
   <section class="">
     <div class="day"><h2>오늘</h2><span class="tag">진행 중</span></div>
-    <a class="card" href="https://toss.im/_m/XlrCFKXj" target="_blank" rel="nofollow noopener">
-      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/NWVkMjMx/QU56d25hUE5UTk5lT25sczFJZVd0YXRKeGxNUXhZNXQ1cko1bmxoc1pIR2o.png" alt="" loading="lazy">
-      <div class="body">
-        <div class="name">내츄럴플러스 혈당건강 바나바, 90정, 2개</div>
-        <div class="row"><span class="rate">72%</span><span class="price">10,900원</span><span class="was">40,000원</span></div>
-        <div class="meta">★ 4.5 · 리뷰 82개</div>
-      </div>
-      <div class="go">보러가기 →</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/RsACuRgd" target="_blank" rel="nofollow noopener">
-      <img class="thumb" src="https://shopping.toss.im/live/temp/2026-04-08/d0801221-ac7f-421e-aa03-cafb57bca5de.jpeg" alt="" loading="lazy">
-      <div class="body">
-        <div class="name">미니족발, 국내산, 500g, 3개</div>
-        <div class="row"><span class="rate">42%</span><span class="price">14,900원</span><span class="was">25,800원</span></div>
-        <div class="meta">★ 4.6 · 리뷰 16개</div>
-      </div>
-      <div class="go">보러가기 →</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/VjXeQAgi" target="_blank" rel="nofollow noopener">
-      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/NWU0ZTkw/QVBOb3drVWsyQ2tTU1FiWTBKcHhvNE9rTEE2MDlhRFJQUVQrOTI0WDR6LzQ.png" alt="" loading="lazy">
-      <div class="body">
-        <div class="name">자연백계 매콤한 가마솥 닭볶음탕, 1kg, 2팩</div>
-        <div class="row"><span class="rate">38%</span><span class="price">15,900원</span><span class="was">25,900원</span></div>
-        <div class="meta">★ 4.4 · 리뷰 154개</div>
-      </div>
-      <div class="go">보러가기 →</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/hAfwkSEa" target="_blank" rel="nofollow noopener">
-      <img class="thumb" src="https://shopping.toss.im/live/temp/2025-11-05/00d4a0b2-f806-4ec8-affb-71f91babddf9.jpeg" alt="" loading="lazy">
-      <div class="body">
-        <div class="name">헬로바이오 알파CD 원데이핏 알파시글로덱스트린, 3g, 14포, 12개</div>
-        <div class="row"><span class="rate">73%</span><span class="price">27,900원</span><span class="was">105,900원</span></div>
-        <div class="meta">★ 4.5 · 리뷰 1,264개</div>
-      </div>
-      <div class="go">보러가기 →</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/DHdjROI8" target="_blank" rel="nofollow noopener">
-      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/v2/NDQ1MDQy/QU9XKytZTi8rQUllY01QKzhkK2N3WXRJSVF3L0loL1N3dC9RQ3Q4QU84dEs.png" alt="" loading="lazy">
-      <div class="body">
-        <div class="name">런웨이브 암링튜브, 2개입, 1개</div>
-        <div class="row"><span class="rate">67%</span><span class="price">3,900원</span><span class="was">11,900원</span></div>
-        <div class="meta">★ 4.7 · 리뷰 6개</div>
-      </div>
-      <div class="go">보러가기 →</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/lxQnGU8n" target="_blank" rel="nofollow noopener">
-      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/M2QwZTk0/QUt6S3dYTXkxR2VJdkQ1ckZFWEluWktUWlJvTkJIdmkwL3ZFNGNrS3N4N1g.png" alt="" loading="lazy">
-      <div class="body">
-        <div class="name">일상미당 난각번호 1번 무항생제 유정란, 20구, 2개</div>
-        <div class="row"><span class="rate">32%</span><span class="price">18,900원</span><span class="was">27,800원</span></div>
-        <div class="meta">★ 4.5 · 리뷰 134개</div>
-      </div>
-      <div class="go">보러가기 →</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/NgrHUfa3" target="_blank" rel="nofollow noopener">
-      <img class="thumb" src="https://shopping.toss.im/live/temp/2026-03-23/9c8676cb-c66c-4ece-a0d1-a696ee8aff91.jpeg" alt="" loading="lazy">
-      <div class="body">
-        <div class="name">라라로코 네이블 오렌지, 중대과, 190g내외, 10개</div>
-        <div class="row"><span class="rate">46%</span><span class="price">7,400원</span><span class="was">13,900원</span></div>
-        <div class="meta">★ 5.0 · 리뷰 2개</div>
-      </div>
-      <div class="go">보러가기 →</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/xlVbZn07" target="_blank" rel="nofollow noopener">
-      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/YTU5NTM4/QUwxMnpEUnpOdG1jMk53Tk1oWTJkR2JiWnNXY3lTWVZsblZZT0VndDZhcDU.png" alt="" loading="lazy">
-      <div class="body">
-        <div class="name">삼진어묵 가득담은 모둠어묵탕, 484g, 2개</div>
-        <div class="row"><span class="rate">50%</span><span class="price">10,900원</span><span class="was">22,000원</span></div>
-        <div class="meta">★ 4.7 · 리뷰 146개</div>
-      </div>
-      <div class="go">보러가기 →</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/hA9pHcGC" target="_blank" rel="nofollow noopener">
-      <img class="thumb" src="https://shopping.toss.im/live/temp/2026-06-09/c8f82812-8c8c-43c8-a2ef-b4862a3a612d.jpeg" alt="" loading="lazy">
-      <div class="body">
-        <div class="name">성심닭갈비, 500g, 2개</div>
-        <div class="row"><span class="rate">69%</span><span class="price">10,900원</span><span class="was">35,900원</span></div>
-        <div class="meta">★ 4.2 · 리뷰 836개</div>
-      </div>
-      <div class="go">보러가기 →</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/pqXc5E02" target="_blank" rel="nofollow noopener">
-      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/NGZkMGFj/QU54VHhxU1gwVHJqbXZabU8yTnRtZWZQWWNOY0ZDY09IQ1NiY09IdzJZNnM.png" alt="" loading="lazy">
-      <div class="body">
-        <div class="name">제주 미니 밤호박 보우짱, 특품, 로얄과, 5kg, 1박스</div>
-        <div class="row"><span class="rate">67%</span><span class="price">13,790원</span><span class="was">42,990원</span></div>
-        <div class="meta">★ 4.6 · 리뷰 2,262개</div>
-      </div>
-      <div class="go">보러가기 →</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/1H7k0QSA" target="_blank" rel="nofollow noopener">
-      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/NzQwNDVj/QUxJNU80NWk4WTZua2RsRUI0bk14MkVIanRYeER3NEx3VDRCSDRiOEIvNU0.png" alt="" loading="lazy">
-      <div class="body">
-        <div class="name">홍주부 국내산 고춧가루, 일반굵기, 보통매운맛, 1kg, 1개</div>
-        <div class="row"><span class="rate">45%</span><span class="price">21,900원</span><span class="was">39,900원</span></div>
-        <div class="meta">★ 4.7 · 리뷰 1,851개</div>
-      </div>
-      <div class="go">보러가기 →</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/PUm5A4vy" target="_blank" rel="nofollow noopener">
-      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/v2/Njg2Yjgw/TWV6cnNZSHN6U2xlazBDWnNOU2Voak1ObEhocWxtdUowbGI3VjFTSmhYND0.png" alt="" loading="lazy">
-      <div class="body">
-        <div class="name">프리미엄 머스크 멜론, 특, 4kg, 2수, 1박스</div>
-        <div class="row"><span class="rate">30%</span><span class="price">15,900원</span><span class="was">23,000원</span></div>
-        <div class="meta">★ 4.8 · 리뷰 34개</div>
-      </div>
-      <div class="go">보러가기 →</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/zZHsGdcA" target="_blank" rel="nofollow noopener">
-      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/MzEwMmZl/QUllbnR3Kzg0N1R4b05aZWoyT0xVNDhkTFdwcFZEaHFTVmM0aTZVcW9mU3I.png" alt="" loading="lazy">
-      <div class="body">
-        <div class="name">썬리지 아보카도, 생과, 중대과, 10과, 1박스</div>
-        <div class="row"><span class="rate">63%</span><span class="price">10,800원</span><span class="was">29,900원</span></div>
-        <div class="meta">★ 4.6 · 리뷰 117개</div>
-      </div>
-      <div class="go">보러가기 →</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/bJdu1lex" target="_blank" rel="nofollow noopener">
-      <img class="thumb" src="https://shopping.toss.im/live/temp/2026-04-05/d3f175bd-263e-4d16-8bc6-0eee5f1d4c8e.jpeg" alt="" loading="lazy">
-      <div class="body">
-        <div class="name">와이니즈 질레트 호환용 5중 면도날 면도기 세트, 스윙면도기 1개 + 면도날 32개입, 1세트</div>
-        <div class="row"><span class="rate">70%</span><span class="price">17,900원</span><span class="was">59,700원</span></div>
-        <div class="meta">★ 4.2 · 리뷰 98개</div>
-      </div>
-      <div class="go">보러가기 →</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/Lq1H24us" target="_blank" rel="nofollow noopener">
-      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/YTRlNzY0/Q1lZOHNMR1BrTTRSMFJqSXpFQm55WXhzeGpFWTVLem1TeGZWamlWREdwTT0.png" alt="" loading="lazy">
-      <div class="body">
-        <div class="name">맥스앤맥스 쿨매트 라이트, Q, 1개</div>
-        <div class="row"><span class="rate">75%</span><span class="price">14,900원</span><span class="was">59,800원</span></div>
-        <div class="meta">★ 4.6 · 리뷰 360개</div>
-      </div>
-      <div class="go">보러가기 →</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/nTFCbxvn" target="_blank" rel="nofollow noopener">
-      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/YTk0M2Zh/QUtUa1owRkV2SnA1c3lIZkNHZlJ2Rzlaa1lvdFBvRkYrZWtGdmFTQUdrQ1c.png" alt="" loading="lazy">
-      <div class="body">
-        <div class="name">한우대학 한우잡육, 1kg, 1개</div>
-        <div class="row"><span class="rate">63%</span><span class="price">19,990원</span><span class="was">54,900원</span></div>
-        <div class="meta">★ 4.4 · 리뷰 801개</div>
-      </div>
-      <div class="go">보러가기 →</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/Hsjk4LJo" target="_blank" rel="nofollow noopener">
-      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/N2E3ZThj/QUtha2R1UDJ4KzBjMnhvMDYxbHRoTHloTE5yVE51WEdORE9VSzBPL0VWV3M.png" alt="" loading="lazy">
-      <div class="body">
-        <div class="name">아몬드 브리즈 제로슈가, 초콜릿, 190ml, 24팩</div>
-        <div class="row"><span class="rate">51%</span><span class="price">17,500원</span><span class="was">36,000원</span></div>
-        <div class="meta">★ 4.8 · 리뷰 1,204개</div>
-      </div>
-      <div class="go">보러가기 →</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/jdhuR5gm" target="_blank" rel="nofollow noopener">
-      <img class="thumb" src="https://shopping.toss.im/live/temp/2026-03-11/b73bee44-7266-4a77-a56e-8e7bcd10a143.jpeg" alt="" loading="lazy">
-      <div class="body">
-        <div class="name">일동후디스 하이뮨 프로틴 밸런스 액티브, 바닐라봉봉 제로, 250ml, 18개</div>
-        <div class="row"><span class="rate">64%</span><span class="price">19,900원</span><span class="was">55,800원</span></div>
-        <div class="meta">★ 4.8 · 리뷰 585개</div>
-      </div>
-      <div class="go">보러가기 →</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/LX4MIlgh" target="_blank" rel="nofollow noopener">
-      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/OTc3Mzll/WEF3ejFJQmp5Q2Q3dXpXWVZCRCs0NHpuQ0VOamZPTzgvQUFjUXhmejUvUT0.png" alt="" loading="lazy">
-      <div class="body">
-        <div class="name">여성 트레이닝 투피스 세트, 그레이, FREE, 1개</div>
-        <div class="row"><span class="rate">72%</span><span class="price">8,900원</span><span class="was">32,900원</span></div>
-        <div class="meta">★ 4.1 · 리뷰 608개</div>
-      </div>
-      <div class="go">보러가기 →</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/dqXtBZMj" target="_blank" rel="nofollow noopener">
-      <img class="thumb" src="https://shopping.toss.im/live/temp/2025-08-07/10537e27-0204-4622-94b5-c4341be8c51a.jpeg" alt="" loading="lazy">
-      <div class="body">
-        <div class="name">또드림마켓 미니오이, 특품, 1kg, 1박스</div>
-        <div class="row"><span class="rate">59%</span><span class="price">6,500원</span><span class="was">15,900원</span></div>
-        <div class="meta">★ 4.6 · 리뷰 2,871개</div>
-      </div>
-      <div class="go">보러가기 →</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/flBICMQe" target="_blank" rel="nofollow noopener">
+    <a class="card" data-cat="식품" data-name="산들에담다 통영 손질 활 바다장어, 대, 1kg, 1박스"
+       href="https://toss.im/_m/flBICMQe" target="_blank" rel="nofollow noopener">
       <img class="thumb" src="https://shopping.toss.im/live/temp/2026-07-30/2d372a8b-a273-47b6-b170-154c2e8e8652.png" alt="" loading="lazy">
       <div class="body">
         <div class="name">산들에담다 통영 손질 활 바다장어, 대, 1kg, 1박스</div>
@@ -251,16 +96,58 @@ footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
       </div>
       <div class="go">보러가기 →</div>
     </a>
-    <a class="card" href="https://toss.im/_m/BKKBQjy8" target="_blank" rel="nofollow noopener">
-      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/ZDU2N2Iw/QU01NHFWVlpvMUhKeDNrZjNzOVoyNXRmWTV4Y2NSVlVUMW43VFNSVjNrMHg.png" alt="" loading="lazy">
+    <a class="card" data-cat="계절" data-name="맥스앤맥스 쿨매트 라이트, q, 1개"
+       href="https://toss.im/_m/Lq1H24us" target="_blank" rel="nofollow noopener">
+      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/YTRlNzY0/Q1lZOHNMR1BrTTRSMFJqSXpFQm55WXhzeGpFWTVLem1TeGZWamlWREdwTT0.png" alt="" loading="lazy">
       <div class="body">
-        <div class="name">자동 변기세정제 맥스, 320g, 4개</div>
-        <div class="row"><span class="rate">53%</span><span class="price">6,990원</span><span class="was">14,900원</span></div>
-        <div class="meta">★ 4.6 · 리뷰 7,635개</div>
+        <div class="name">맥스앤맥스 쿨매트 라이트, Q, 1개</div>
+        <div class="row"><span class="rate">75%</span><span class="price">14,900원</span><span class="was">59,800원</span></div>
+        <div class="meta">★ 4.6 · 리뷰 360개</div>
       </div>
       <div class="go">보러가기 →</div>
     </a>
-    <a class="card" href="https://toss.im/_m/VMRTs2wd" target="_blank" rel="nofollow noopener">
+    <a class="card" data-cat="기타" data-name="헬로바이오 알파cd 원데이핏 알파시글로덱스트린, 3g, 14포, 12개"
+       href="https://toss.im/_m/hAfwkSEa" target="_blank" rel="nofollow noopener">
+      <img class="thumb" src="https://shopping.toss.im/live/temp/2025-11-05/00d4a0b2-f806-4ec8-affb-71f91babddf9.jpeg" alt="" loading="lazy">
+      <div class="body">
+        <div class="name">헬로바이오 알파CD 원데이핏 알파시글로덱스트린, 3g, 14포, 12개</div>
+        <div class="row"><span class="rate">73%</span><span class="price">27,900원</span><span class="was">105,900원</span></div>
+        <div class="meta">★ 4.5 · 리뷰 1,264개</div>
+      </div>
+      <div class="go">보러가기 →</div>
+    </a>
+    <a class="card" data-cat="기타" data-name="내츄럴플러스 혈당건강 바나바, 90정, 2개"
+       href="https://toss.im/_m/XlrCFKXj" target="_blank" rel="nofollow noopener">
+      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/NWVkMjMx/QU56d25hUE5UTk5lT25sczFJZVd0YXRKeGxNUXhZNXQ1cko1bmxoc1pIR2o.png" alt="" loading="lazy">
+      <div class="body">
+        <div class="name">내츄럴플러스 혈당건강 바나바, 90정, 2개</div>
+        <div class="row"><span class="rate">72%</span><span class="price">10,900원</span><span class="was">40,000원</span></div>
+        <div class="meta">★ 4.5 · 리뷰 82개</div>
+      </div>
+      <div class="go">보러가기 →</div>
+    </a>
+    <a class="card" data-cat="패션" data-name="여성 트레이닝 투피스 세트, 그레이, free, 1개"
+       href="https://toss.im/_m/LX4MIlgh" target="_blank" rel="nofollow noopener">
+      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/OTc3Mzll/WEF3ejFJQmp5Q2Q3dXpXWVZCRCs0NHpuQ0VOamZPTzgvQUFjUXhmejUvUT0.png" alt="" loading="lazy">
+      <div class="body">
+        <div class="name">여성 트레이닝 투피스 세트, 그레이, FREE, 1개</div>
+        <div class="row"><span class="rate">72%</span><span class="price">8,900원</span><span class="was">32,900원</span></div>
+        <div class="meta">★ 4.1 · 리뷰 608개</div>
+      </div>
+      <div class="go">보러가기 →</div>
+    </a>
+    <a class="card" data-cat="뷰티" data-name="와이니즈 질레트 호환용 5중 면도날 면도기 세트, 스윙면도기 1개 + 면도날 32개입, 1세트"
+       href="https://toss.im/_m/bJdu1lex" target="_blank" rel="nofollow noopener">
+      <img class="thumb" src="https://shopping.toss.im/live/temp/2026-04-05/d3f175bd-263e-4d16-8bc6-0eee5f1d4c8e.jpeg" alt="" loading="lazy">
+      <div class="body">
+        <div class="name">와이니즈 질레트 호환용 5중 면도날 면도기 세트, 스윙면도기 1개 + 면도날 32개입, 1세트</div>
+        <div class="row"><span class="rate">70%</span><span class="price">17,900원</span><span class="was">59,700원</span></div>
+        <div class="meta">★ 4.2 · 리뷰 98개</div>
+      </div>
+      <div class="go">보러가기 →</div>
+    </a>
+    <a class="card" data-cat="뷰티" data-name="파이토메이드 저자극 초극세 프리미엄 칫솔, 10개입, 3세트"
+       href="https://toss.im/_m/VMRTs2wd" target="_blank" rel="nofollow noopener">
       <img class="thumb" src="https://shopping.toss.im/live/taca/ai/ZDhhZTNk/QU45TitWWmFxdzZhYlRJaDVNZDhnZXY3eVdWMnc4a0IrSFR4M2cvMUZ2aEU.png" alt="" loading="lazy">
       <div class="body">
         <div class="name">파이토메이드 저자극 초극세 프리미엄 칫솔, 10개입, 3세트</div>
@@ -269,34 +156,68 @@ footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
       </div>
       <div class="go">보러가기 →</div>
     </a>
-    <a class="card" href="https://toss.im/_m/1RRv4d06" target="_blank" rel="nofollow noopener">
-      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/YmZiZDRh/V1l2S2NEellaYWFqZE9uTnlTU1JvemVMRGxaY0s4TW1xOVNrK2FqVVd3WT0.png" alt="" loading="lazy">
+    <a class="card" data-cat="식품" data-name="성심닭갈비, 500g, 2개"
+       href="https://toss.im/_m/hA9pHcGC" target="_blank" rel="nofollow noopener">
+      <img class="thumb" src="https://shopping.toss.im/live/temp/2026-06-09/c8f82812-8c8c-43c8-a2ef-b4862a3a612d.jpeg" alt="" loading="lazy">
       <div class="body">
-        <div class="name">농심 신라면, 120g, 5개 + 안성탕면, 125g, 5개 + 너구리, 120g, 5개 + 짜파게티, 140g, 5개</div>
-        <div class="row"><span class="rate">18%</span><span class="price">15,147원</span><span class="was">18,480원</span></div>
-        <div class="meta">★ 4.8 · 리뷰 617개</div>
+        <div class="name">성심닭갈비, 500g, 2개</div>
+        <div class="row"><span class="rate">69%</span><span class="price">10,900원</span><span class="was">35,900원</span></div>
+        <div class="meta">★ 4.2 · 리뷰 836개</div>
       </div>
       <div class="go">보러가기 →</div>
     </a>
-    <a class="card" href="https://toss.im/_m/xmleUpFn" target="_blank" rel="nofollow noopener">
-      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/MTc3YTRk/TXhtd2c4dHk0ZkFyYmNaRGpMWXpIalNUelRiQzFqVGpyUnp6blZYa1RKUT0.png" alt="" loading="lazy">
+    <a class="card" data-cat="계절" data-name="런웨이브 암링튜브, 2개입, 1개"
+       href="https://toss.im/_m/DHdjROI8" target="_blank" rel="nofollow noopener">
+      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/v2/NDQ1MDQy/QU9XKytZTi8rQUllY01QKzhkK2N3WXRJSVF3L0loL1N3dC9RQ3Q4QU84dEs.png" alt="" loading="lazy">
       <div class="body">
-        <div class="name">파파네정육점 한입 삼겹살, 500g, 4개</div>
-        <div class="row"><span class="rate">47%</span><span class="price">19,197원</span><span class="was">36,500원</span></div>
-        <div class="meta">★ 4.3 · 리뷰 3,753개</div>
+        <div class="name">런웨이브 암링튜브, 2개입, 1개</div>
+        <div class="row"><span class="rate">67%</span><span class="price">3,900원</span><span class="was">11,900원</span></div>
+        <div class="meta">★ 4.7 · 리뷰 6개</div>
       </div>
       <div class="go">보러가기 →</div>
     </a>
-    <a class="card" href="https://toss.im/_m/fNjmk7h2" target="_blank" rel="nofollow noopener">
-      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/ZjkzOTFj/QUtJa3lMSVBmVHQyai9YbkxEalRIeXl2aXZXaXZKNnEzbUI3ZUl5ZTVUQUs.png" alt="" loading="lazy">
+    <a class="card" data-cat="식품" data-name="제주 미니 밤호박 보우짱, 특품, 로얄과, 5kg, 1박스"
+       href="https://toss.im/_m/pqXc5E02" target="_blank" rel="nofollow noopener">
+      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/NGZkMGFj/QU54VHhxU1gwVHJqbXZabU8yTnRtZWZQWWNOY0ZDY09IQ1NiY09IdzJZNnM.png" alt="" loading="lazy">
       <div class="body">
-        <div class="name">별미촌 알타리 총각김치, 2kg, 1박스</div>
-        <div class="row"><span class="rate">47%</span><span class="price">9,900원</span><span class="was">18,900원</span></div>
-        <div class="meta">★ 4.4 · 리뷰 3,322개</div>
+        <div class="name">제주 미니 밤호박 보우짱, 특품, 로얄과, 5kg, 1박스</div>
+        <div class="row"><span class="rate">67%</span><span class="price">13,790원</span><span class="was">42,990원</span></div>
+        <div class="meta">★ 4.6 · 리뷰 2,262개</div>
       </div>
       <div class="go">보러가기 →</div>
     </a>
-    <a class="card" href="https://toss.im/_m/FdyHqRB3" target="_blank" rel="nofollow noopener">
+    <a class="card" data-cat="건강" data-name="일동후디스 하이뮨 프로틴 밸런스 액티브, 바닐라봉봉 제로, 250ml, 18개"
+       href="https://toss.im/_m/jdhuR5gm" target="_blank" rel="nofollow noopener">
+      <img class="thumb" src="https://shopping.toss.im/live/temp/2026-03-11/b73bee44-7266-4a77-a56e-8e7bcd10a143.jpeg" alt="" loading="lazy">
+      <div class="body">
+        <div class="name">일동후디스 하이뮨 프로틴 밸런스 액티브, 바닐라봉봉 제로, 250ml, 18개</div>
+        <div class="row"><span class="rate">64%</span><span class="price">19,900원</span><span class="was">55,800원</span></div>
+        <div class="meta">★ 4.8 · 리뷰 585개</div>
+      </div>
+      <div class="go">보러가기 →</div>
+    </a>
+    <a class="card" data-cat="식품" data-name="썬리지 아보카도, 생과, 중대과, 10과, 1박스"
+       href="https://toss.im/_m/zZHsGdcA" target="_blank" rel="nofollow noopener">
+      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/MzEwMmZl/QUllbnR3Kzg0N1R4b05aZWoyT0xVNDhkTFdwcFZEaHFTVmM0aTZVcW9mU3I.png" alt="" loading="lazy">
+      <div class="body">
+        <div class="name">썬리지 아보카도, 생과, 중대과, 10과, 1박스</div>
+        <div class="row"><span class="rate">63%</span><span class="price">10,800원</span><span class="was">29,900원</span></div>
+        <div class="meta">★ 4.6 · 리뷰 117개</div>
+      </div>
+      <div class="go">보러가기 →</div>
+    </a>
+    <a class="card" data-cat="식품" data-name="한우대학 한우잡육, 1kg, 1개"
+       href="https://toss.im/_m/nTFCbxvn" target="_blank" rel="nofollow noopener">
+      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/YTk0M2Zh/QUtUa1owRkV2SnA1c3lIZkNHZlJ2Rzlaa1lvdFBvRkYrZWtGdmFTQUdrQ1c.png" alt="" loading="lazy">
+      <div class="body">
+        <div class="name">한우대학 한우잡육, 1kg, 1개</div>
+        <div class="row"><span class="rate">63%</span><span class="price">19,990원</span><span class="was">54,900원</span></div>
+        <div class="meta">★ 4.4 · 리뷰 801개</div>
+      </div>
+      <div class="go">보러가기 →</div>
+    </a>
+    <a class="card" data-cat="뷰티" data-name="가그린 제로 기획세트, 820ml, 4개 + 100ml, 1개"
+       href="https://toss.im/_m/FdyHqRB3" target="_blank" rel="nofollow noopener">
       <img class="thumb" src="https://shopping.toss.im/live/temp/2026-06-29/d2ec3587-f37e-4034-8da9-7e51a7c2aafd.png" alt="" loading="lazy">
       <div class="body">
         <div class="name">가그린 제로 기획세트, 820ml, 4개 + 100ml, 1개</div>
@@ -305,16 +226,18 @@ footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
       </div>
       <div class="go">보러가기 →</div>
     </a>
-    <a class="card" href="https://toss.im/_m/5YKMUzuC" target="_blank" rel="nofollow noopener">
-      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/Nzc5ZWMz/WnR1dGFWTHRZY3hhSkIwellhM0czT0pKMXRhazB5a3JXV1JVNXQxRW90UT0.png" alt="" loading="lazy">
+    <a class="card" data-cat="식품" data-name="또드림마켓 미니오이, 특품, 1kg, 1박스"
+       href="https://toss.im/_m/dqXtBZMj" target="_blank" rel="nofollow noopener">
+      <img class="thumb" src="https://shopping.toss.im/live/temp/2025-08-07/10537e27-0204-4622-94b5-c4341be8c51a.jpeg" alt="" loading="lazy">
       <div class="body">
-        <div class="name">광천김 바삭바삭 모둠 광천 김자반, 40g, 10봉</div>
-        <div class="row"><span class="rate">50%</span><span class="price">10,900원</span><span class="was">21,800원</span></div>
-        <div class="meta">★ 4.7 · 리뷰 1,802개</div>
+        <div class="name">또드림마켓 미니오이, 특품, 1kg, 1박스</div>
+        <div class="row"><span class="rate">59%</span><span class="price">6,500원</span><span class="was">15,900원</span></div>
+        <div class="meta">★ 4.6 · 리뷰 2,871개</div>
       </div>
       <div class="go">보러가기 →</div>
     </a>
-    <a class="card" href="https://toss.im/_m/fUR4fMlB" target="_blank" rel="nofollow noopener">
+    <a class="card" data-cat="식품" data-name="애슐리 볶음밥 올인원 10종 세트, 1개"
+       href="https://toss.im/_m/fUR4fMlB" target="_blank" rel="nofollow noopener">
       <img class="thumb" src="https://shopping.toss.im/live/taca/ai/v2/YTUyZjk2/S1YyaXdQcEJwZTAxK29mcUM4ZjlZVWw1V0dGc29hRTVWRENEeDA1ZXUyWT0.png" alt="" loading="lazy">
       <div class="body">
         <div class="name">애슐리 볶음밥 올인원 10종 세트, 1개</div>
@@ -323,7 +246,18 @@ footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
       </div>
       <div class="go">보러가기 →</div>
     </a>
-    <a class="card" href="https://toss.im/_m/15br1Por" target="_blank" rel="nofollow noopener">
+    <a class="card" data-cat="생활" data-name="자동 변기세정제 맥스, 320g, 4개"
+       href="https://toss.im/_m/BKKBQjy8" target="_blank" rel="nofollow noopener">
+      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/ZDU2N2Iw/QU01NHFWVlpvMUhKeDNrZjNzOVoyNXRmWTV4Y2NSVlVUMW43VFNSVjNrMHg.png" alt="" loading="lazy">
+      <div class="body">
+        <div class="name">자동 변기세정제 맥스, 320g, 4개</div>
+        <div class="row"><span class="rate">53%</span><span class="price">6,990원</span><span class="was">14,900원</span></div>
+        <div class="meta">★ 4.6 · 리뷰 7,635개</div>
+      </div>
+      <div class="go">보러가기 →</div>
+    </a>
+    <a class="card" data-cat="식품" data-name="외갓집 1분 30초 통등심 돈까스, 650g, 1팩"
+       href="https://toss.im/_m/15br1Por" target="_blank" rel="nofollow noopener">
       <img class="thumb" src="https://shopping.toss.im/live/taca/ai/YjU1MmE4/QUtVeU0xTG5NaDVqRnNRUW5lV203VVRBMHdER0J6YzdTMTZPWVQrT0lJLzg.png" alt="" loading="lazy">
       <div class="body">
         <div class="name">외갓집 1분 30초 통등심 돈까스, 650g, 1팩</div>
@@ -332,12 +266,174 @@ footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
       </div>
       <div class="go">보러가기 →</div>
     </a>
+    <a class="card" data-cat="식품" data-name="아몬드 브리즈 제로슈가, 초콜릿, 190ml, 24팩"
+       href="https://toss.im/_m/Hsjk4LJo" target="_blank" rel="nofollow noopener">
+      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/N2E3ZThj/QUtha2R1UDJ4KzBjMnhvMDYxbHRoTHloTE5yVE51WEdORE9VSzBPL0VWV3M.png" alt="" loading="lazy">
+      <div class="body">
+        <div class="name">아몬드 브리즈 제로슈가, 초콜릿, 190ml, 24팩</div>
+        <div class="row"><span class="rate">51%</span><span class="price">17,500원</span><span class="was">36,000원</span></div>
+        <div class="meta">★ 4.8 · 리뷰 1,204개</div>
+      </div>
+      <div class="go">보러가기 →</div>
+    </a>
+    <a class="card" data-cat="식품" data-name="삼진어묵 가득담은 모둠어묵탕, 484g, 2개"
+       href="https://toss.im/_m/xlVbZn07" target="_blank" rel="nofollow noopener">
+      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/YTU5NTM4/QUwxMnpEUnpOdG1jMk53Tk1oWTJkR2JiWnNXY3lTWVZsblZZT0VndDZhcDU.png" alt="" loading="lazy">
+      <div class="body">
+        <div class="name">삼진어묵 가득담은 모둠어묵탕, 484g, 2개</div>
+        <div class="row"><span class="rate">50%</span><span class="price">10,900원</span><span class="was">22,000원</span></div>
+        <div class="meta">★ 4.7 · 리뷰 146개</div>
+      </div>
+      <div class="go">보러가기 →</div>
+    </a>
+    <a class="card" data-cat="식품" data-name="광천김 바삭바삭 모둠 광천 김자반, 40g, 10봉"
+       href="https://toss.im/_m/5YKMUzuC" target="_blank" rel="nofollow noopener">
+      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/Nzc5ZWMz/WnR1dGFWTHRZY3hhSkIwellhM0czT0pKMXRhazB5a3JXV1JVNXQxRW90UT0.png" alt="" loading="lazy">
+      <div class="body">
+        <div class="name">광천김 바삭바삭 모둠 광천 김자반, 40g, 10봉</div>
+        <div class="row"><span class="rate">50%</span><span class="price">10,900원</span><span class="was">21,800원</span></div>
+        <div class="meta">★ 4.7 · 리뷰 1,802개</div>
+      </div>
+      <div class="go">보러가기 →</div>
+    </a>
+    <a class="card" data-cat="식품" data-name="파파네정육점 한입 삼겹살, 500g, 4개"
+       href="https://toss.im/_m/xmleUpFn" target="_blank" rel="nofollow noopener">
+      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/MTc3YTRk/TXhtd2c4dHk0ZkFyYmNaRGpMWXpIalNUelRiQzFqVGpyUnp6blZYa1RKUT0.png" alt="" loading="lazy">
+      <div class="body">
+        <div class="name">파파네정육점 한입 삼겹살, 500g, 4개</div>
+        <div class="row"><span class="rate">47%</span><span class="price">19,197원</span><span class="was">36,500원</span></div>
+        <div class="meta">★ 4.3 · 리뷰 3,753개</div>
+      </div>
+      <div class="go">보러가기 →</div>
+    </a>
+    <a class="card" data-cat="식품" data-name="별미촌 알타리 총각김치, 2kg, 1박스"
+       href="https://toss.im/_m/fNjmk7h2" target="_blank" rel="nofollow noopener">
+      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/ZjkzOTFj/QUtJa3lMSVBmVHQyai9YbkxEalRIeXl2aXZXaXZKNnEzbUI3ZUl5ZTVUQUs.png" alt="" loading="lazy">
+      <div class="body">
+        <div class="name">별미촌 알타리 총각김치, 2kg, 1박스</div>
+        <div class="row"><span class="rate">47%</span><span class="price">9,900원</span><span class="was">18,900원</span></div>
+        <div class="meta">★ 4.4 · 리뷰 3,322개</div>
+      </div>
+      <div class="go">보러가기 →</div>
+    </a>
+    <a class="card" data-cat="식품" data-name="라라로코 네이블 오렌지, 중대과, 190g내외, 10개"
+       href="https://toss.im/_m/NgrHUfa3" target="_blank" rel="nofollow noopener">
+      <img class="thumb" src="https://shopping.toss.im/live/temp/2026-03-23/9c8676cb-c66c-4ece-a0d1-a696ee8aff91.jpeg" alt="" loading="lazy">
+      <div class="body">
+        <div class="name">라라로코 네이블 오렌지, 중대과, 190g내외, 10개</div>
+        <div class="row"><span class="rate">46%</span><span class="price">7,400원</span><span class="was">13,900원</span></div>
+        <div class="meta">★ 5.0 · 리뷰 2개</div>
+      </div>
+      <div class="go">보러가기 →</div>
+    </a>
+    <a class="card" data-cat="식품" data-name="홍주부 국내산 고춧가루, 일반굵기, 보통매운맛, 1kg, 1개"
+       href="https://toss.im/_m/1H7k0QSA" target="_blank" rel="nofollow noopener">
+      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/NzQwNDVj/QUxJNU80NWk4WTZua2RsRUI0bk14MkVIanRYeER3NEx3VDRCSDRiOEIvNU0.png" alt="" loading="lazy">
+      <div class="body">
+        <div class="name">홍주부 국내산 고춧가루, 일반굵기, 보통매운맛, 1kg, 1개</div>
+        <div class="row"><span class="rate">45%</span><span class="price">21,900원</span><span class="was">39,900원</span></div>
+        <div class="meta">★ 4.7 · 리뷰 1,851개</div>
+      </div>
+      <div class="go">보러가기 →</div>
+    </a>
+    <a class="card" data-cat="기타" data-name="미니족발, 국내산, 500g, 3개"
+       href="https://toss.im/_m/RsACuRgd" target="_blank" rel="nofollow noopener">
+      <img class="thumb" src="https://shopping.toss.im/live/temp/2026-04-08/d0801221-ac7f-421e-aa03-cafb57bca5de.jpeg" alt="" loading="lazy">
+      <div class="body">
+        <div class="name">미니족발, 국내산, 500g, 3개</div>
+        <div class="row"><span class="rate">42%</span><span class="price">14,900원</span><span class="was">25,800원</span></div>
+        <div class="meta">★ 4.6 · 리뷰 16개</div>
+      </div>
+      <div class="go">보러가기 →</div>
+    </a>
+    <a class="card" data-cat="식품" data-name="자연백계 매콤한 가마솥 닭볶음탕, 1kg, 2팩"
+       href="https://toss.im/_m/VjXeQAgi" target="_blank" rel="nofollow noopener">
+      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/NWU0ZTkw/QVBOb3drVWsyQ2tTU1FiWTBKcHhvNE9rTEE2MDlhRFJQUVQrOTI0WDR6LzQ.png" alt="" loading="lazy">
+      <div class="body">
+        <div class="name">자연백계 매콤한 가마솥 닭볶음탕, 1kg, 2팩</div>
+        <div class="row"><span class="rate">38%</span><span class="price">15,900원</span><span class="was">25,900원</span></div>
+        <div class="meta">★ 4.4 · 리뷰 154개</div>
+      </div>
+      <div class="go">보러가기 →</div>
+    </a>
+    <a class="card" data-cat="식품" data-name="일상미당 난각번호 1번 무항생제 유정란, 20구, 2개"
+       href="https://toss.im/_m/lxQnGU8n" target="_blank" rel="nofollow noopener">
+      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/M2QwZTk0/QUt6S3dYTXkxR2VJdkQ1ckZFWEluWktUWlJvTkJIdmkwL3ZFNGNrS3N4N1g.png" alt="" loading="lazy">
+      <div class="body">
+        <div class="name">일상미당 난각번호 1번 무항생제 유정란, 20구, 2개</div>
+        <div class="row"><span class="rate">32%</span><span class="price">18,900원</span><span class="was">27,800원</span></div>
+        <div class="meta">★ 4.5 · 리뷰 134개</div>
+      </div>
+      <div class="go">보러가기 →</div>
+    </a>
+    <a class="card" data-cat="식품" data-name="프리미엄 머스크 멜론, 특, 4kg, 2수, 1박스"
+       href="https://toss.im/_m/PUm5A4vy" target="_blank" rel="nofollow noopener">
+      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/v2/Njg2Yjgw/TWV6cnNZSHN6U2xlazBDWnNOU2Voak1ObEhocWxtdUowbGI3VjFTSmhYND0.png" alt="" loading="lazy">
+      <div class="body">
+        <div class="name">프리미엄 머스크 멜론, 특, 4kg, 2수, 1박스</div>
+        <div class="row"><span class="rate">30%</span><span class="price">15,900원</span><span class="was">23,000원</span></div>
+        <div class="meta">★ 4.8 · 리뷰 34개</div>
+      </div>
+      <div class="go">보러가기 →</div>
+    </a>
+    <a class="card" data-cat="식품" data-name="농심 신라면, 120g, 5개 + 안성탕면, 125g, 5개 + 너구리, 120g, 5개 + 짜파게티, 140g, 5개"
+       href="https://toss.im/_m/1RRv4d06" target="_blank" rel="nofollow noopener">
+      <img class="thumb" src="https://shopping.toss.im/live/taca/ai/YmZiZDRh/V1l2S2NEellaYWFqZE9uTnlTU1JvemVMRGxaY0s4TW1xOVNrK2FqVVd3WT0.png" alt="" loading="lazy">
+      <div class="body">
+        <div class="name">농심 신라면, 120g, 5개 + 안성탕면, 125g, 5개 + 너구리, 120g, 5개 + 짜파게티, 140g, 5개</div>
+        <div class="row"><span class="rate">18%</span><span class="price">15,147원</span><span class="was">18,480원</span></div>
+        <div class="meta">★ 4.8 · 리뷰 617개</div>
+      </div>
+      <div class="go">보러가기 →</div>
+    </a>
   </section>
 
   <footer>
-    마지막 업데이트 2026년 08월 09일 22:21<br>
+    마지막 업데이트 2026년 08월 09일 23:02<br>
     가격과 재고는 판매처 사정으로 변경될 수 있습니다.
   </footer>
 </div>
+<script>
+(function(){
+  var q=document.getElementById('q');
+  var chips=[].slice.call(document.querySelectorAll('.chip'));
+  var cards=[].slice.call(document.querySelectorAll('.card'));
+  var sections=[].slice.call(document.querySelectorAll('section'));
+  var count=document.getElementById('count');
+  var empty=document.getElementById('empty');
+  var cat='';
+
+  function apply(){
+    var term=q.value.trim().toLowerCase();
+    var n=0;
+    cards.forEach(function(c){
+      var okCat=!cat||c.dataset.cat===cat;
+      var okTerm=!term||c.dataset.name.indexOf(term)>-1;
+      var show=okCat&&okTerm;
+      c.style.display=show?'':'none';
+      if(show)n++;
+    });
+    // 카드가 하나도 안 남은 날짜 구획은 통째로 숨긴다
+    sections.forEach(function(s){
+      var any=[].slice.call(s.querySelectorAll('.card'))
+        .some(function(c){return c.style.display!=='none'});
+      s.style.display=any?'':'none';
+    });
+    count.textContent=n+'개';
+    empty.style.display=n?'none':'block';
+  }
+
+  q.addEventListener('input',apply);
+  chips.forEach(function(ch){
+    ch.addEventListener('click',function(){
+      chips.forEach(function(x){x.classList.remove('on')});
+      ch.classList.add('on');
+      cat=ch.dataset.cat;
+      apply();
+    });
+  });
+  apply();
+})();
+</script>
 </body>
 </html>
