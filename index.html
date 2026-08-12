@@ -10,7 +10,7 @@
 <meta property="og:title" content="하루특가 알림 — 오늘의 특가 모음">
 <meta property="og:description" content="오늘 33건, 최대 88% 할인. 자정에 끝납니다.">
 <meta property="og:url" content="https://hjhca12-art.github.io/daily-deal-alarm/">
-<meta property="og:image" content="https://hjhca12-art.github.io/daily-deal-alarm/og.png?v=202608122245">
+<meta property="og:image" content="https://hjhca12-art.github.io/daily-deal-alarm/og.png?v=202608122253">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -26,6 +26,16 @@ h1 span{color:#25F0D4}
 .sub{margin-top:10px;color:#8FB3B8;font-size:14px}
 .note{margin:20px 0 8px;padding:12px 14px;border:1px solid #1d4149;
  border-radius:10px;background:#08222833;color:#8FB3B8;font-size:12px}
+/* 카카오 노랑을 그대로 쓴다. 브랜드 색으로 맞추면 예쁘긴 한데
+   "카톡방"이라는 게 한눈에 안 읽혀서 클릭률이 떨어진다. */
+.kko{display:flex;align-items:center;gap:12px;margin-top:14px;padding:14px 16px;
+ border-radius:14px;background:#FEE500;color:#191600;text-decoration:none;
+ box-shadow:0 6px 20px #FEE50022}
+.kko .ico{font-size:26px;line-height:1}
+.kko .t{flex:1;min-width:0}
+.kko .t b{display:block;font-size:14.5px;font-weight:800;letter-spacing:-.02em}
+.kko .t span{display:block;margin-top:2px;font-size:11.5px;opacity:.72}
+.kko .go{font-size:13px;font-weight:800;white-space:nowrap}
 .tools{position:sticky;top:0;z-index:5;padding:12px 0 10px;
  background:linear-gradient(#03161A 78%,#03161A00)}
 .search{width:100%;padding:12px 14px;border-radius:12px;font-size:15px;
@@ -91,6 +101,14 @@ footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
     이에 따른 일정액의 수수료를 제공받습니다.
   </div>
 
+  <a class="kko" href="https://open.kakao.com/o/gTpmxyIi" target="_blank" rel="noopener">
+    <span class="ico">💬</span>
+    <span class="t">
+      <b>오픈채팅방에서 특가 알림 받기</b>
+      <span>하루 두 번, 놓치기 아까운 것만 골라서</span>
+    </span>
+    <span class="go">입장 →</span>
+  </a>
   <div class="tools">
     <input id="q" class="search" type="search" autocomplete="off"
            placeholder="상품 검색 (예: 김치, 커피)">
@@ -600,7 +618,7 @@ footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
   </section>
 
   <footer>
-    마지막 업데이트 2026년 08월 12일 22:45<br>
+    마지막 업데이트 2026년 08월 12일 22:53<br>
     가격과 재고는 판매처 사정으로 변경될 수 있습니다.
   </footer>
 </div>
