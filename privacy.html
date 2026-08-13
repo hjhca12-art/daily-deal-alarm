@@ -93,7 +93,7 @@ h1 span{color:#25F0D4}
 .swipe{margin-left:auto;font-size:10px;font-weight:700;color:#5d7d83;
  white-space:nowrap}
 /* 레일이 컬럼 안쪽 여백에서 잘리지 않고 테두리까지 흘러가게 한다 */
-.col .grid,.feat .grid{margin-right:-9px;padding-right:9px}
+.col .grid{margin-right:-9px;padding-right:9px}
 .card{display:block;padding:9px;background:#082228;border:1px solid #12343c;
  border-radius:13px;text-decoration:none;color:inherit;
  transition:border-color .15s}
@@ -111,24 +111,8 @@ h1 span{color:#25F0D4}
 .price{font-weight:800;font-size:14px}
 .was{color:#6f8f95;font-size:10.5px;text-decoration:line-through}
 .meta{margin-top:4px;color:#7fa3a9;font-size:10px}
-/* 영상 보고 온 사람이 그 상품을 바로 찾는 게 이 페이지의 핵심 동선이라
-   해당 카드는 테두리까지 바꿔서 확실히 구분한다 */
-.card.hasvideo{border-color:#FF6A00;background:#0d2226;
- box-shadow:0 0 0 1px #FF6A0033,0 6px 22px #FF6A0014}
-.badges{display:flex;flex-wrap:wrap;gap:3px;margin-bottom:5px}
-.badge{display:inline-block;padding:2px 7px;border-radius:999px;
- background:#FF6A00;color:#fff;font-size:9.5px;font-weight:800;
- letter-spacing:-.01em}
-.badge.low{background:#25F0D4;color:#03161A}
-/* 영상 구획은 좌우 컬럼 밖이라 어느 몰인지 알 수 없다. 거기서만 몰을 표기한다. */
-.badge.src{background:#12343c;color:#8FB3B8;font-weight:700}
-.badge.src.coupang{background:#3f2617;color:#e8a37a}
-/* 영상 구획은 몰이 아니라 채널의 구획이라 두 색을 같이 쓴다 */
-.feat{position:relative;border:1px solid #21454c;border-radius:14px;
- padding:15px 9px 12px;background:#0a2126;margin-top:8px;overflow:hidden}
-.feat::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;
- background:linear-gradient(90deg,#25F0D4,#FF6A00)}
-.feat .day{margin-top:0}
+/* 영상 상품은 별도 구획 대신 카테고리 칩으로 걸러 본다 */
+.chip.vid.on{background:#25F0D4;border-color:#25F0D4;color:#03161A}
 /* ── 가격 추적 ── 한 번 본 가격은 계속 들고 있으니 지금이 싼지 말할 수 있다 */
 .track{margin-top:7px;padding-top:7px;border-top:1px dashed #163b44;
  display:flex;align-items:center;gap:7px}
@@ -149,7 +133,7 @@ footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));
   gap:10px;overflow:visible;padding-bottom:0}
  .grid>.card{flex:none}
- .col .grid,.feat .grid{margin-right:0;padding-right:0}
+ .col .grid{margin-right:0;padding-right:0}
  h1{font-size:34px}
  .colnote{font-size:11px}
  .swipe{display:none}
