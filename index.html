@@ -10,7 +10,7 @@
 <meta property="og:title" content="하루특가 알림 — 오늘의 특가 모음">
 <meta property="og:description" content="오늘 61건, 최대 84% 할인. 자정에 끝납니다.">
 <meta property="og:url" content="https://hjhca12-art.github.io/daily-deal-alarm/">
-<meta property="og:image" content="https://hjhca12-art.github.io/daily-deal-alarm/og.png?v=202608132118">
+<meta property="og:image" content="https://hjhca12-art.github.io/daily-deal-alarm/og.png?v=202608132125">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -91,6 +91,16 @@ h1 span{color:#25F0D4}
 .day .tag{font-size:9.5px;font-weight:700;padding:2px 7px;border-radius:999px;
  background:#FF6A00;color:#fff}
 .day .tag.old{background:#1d4149;color:#8FB3B8}
+/* 마감 카운트다운. tabular-nums 가 없으면 숫자 폭이 달라 1초마다 덜컹거린다. */
+.tag.live{display:inline-flex;align-items:center;gap:5px;
+ padding:3px 9px;font-size:10.5px;letter-spacing:-.01em;
+ font-variant-numeric:tabular-nums}
+.tag.live::before{content:"";width:5px;height:5px;border-radius:50%;
+ background:#fff;animation:blink 1.3s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.tag.live.done{background:#1d4149;color:#8FB3B8}
+.tag.live.done::before{background:#8FB3B8;animation:none}
+@media(prefers-reduced-motion:reduce){.tag.live::before{animation:none}}
 .dayhint{margin-top:4px;color:#6f8f95;font-size:10px;line-height:1.45}
 /* 가로 레일. 카드가 2.2개쯤 걸쳐 보이게 폭을 잡아 더 있다는 걸 알린다. */
 .grid{display:flex;gap:9px;margin-top:10px;padding-bottom:5px;
@@ -182,7 +192,7 @@ footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
     </div>
     <div class="colbody">
       <section class="">
-        <div class="day"><h3>오늘</h3><span class="tag">진행 중</span><span class="swipe">밀어서 더 보기 →</span></div>
+        <div class="day"><h3>오늘</h3><span class="tag live" data-until="2026-08-14T00:00:00+09:00">계산 중</span><span class="swipe">밀어서 더 보기 →</span></div>
         <div class="grid">
     <a class="card" data-cat="기타"
        data-name="이어맥 팬톤 커널형 블루투스 tws ptbt-300, 베이지, 1개"
@@ -747,7 +757,7 @@ footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
     </div>
     <div class="colbody">
       <section class="">
-        <div class="day"><h3>오늘</h3><span class="tag">진행 중</span><span class="swipe">밀어서 더 보기 →</span></div>
+        <div class="day"><h3>오늘</h3><span class="tag live" data-until="2026-08-14T00:00:00+09:00">계산 중</span><span class="swipe">밀어서 더 보기 →</span></div>
         <div class="grid">
     <a class="card" data-cat="생활"
        data-name="깨끗한나라 순수 프리미엄 더 퍼스트 천연펄프 3겹 고급롤화장지"
@@ -1080,13 +1090,28 @@ footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
   </div>
 
   <footer>
-    마지막 업데이트 2026년 08월 13일 21:18<br>
+    마지막 업데이트 2026년 08월 13일 21:25<br>
     가격과 재고는 판매처 사정으로 변경될 수 있습니다.<br>
     <a href="privacy.html">개인정보처리방침</a>
   </footer>
 </div>
 <script>
 (function(){
+  // 자정 마감까지 남은 시간. 페이지를 열어 둔 채로도 계속 줄어든다.
+  var timers=[].slice.call(document.querySelectorAll('.tag.live'));
+  function pad(n){return n<10?'0'+n:''+n}
+  function tick(){
+    var now=Date.now();
+    timers.forEach(function(t){
+      var left=Math.floor((new Date(t.dataset.until).getTime()-now)/1000);
+      if(left<=0){t.textContent='마감';t.classList.add('done');return}
+      t.classList.remove('done');
+      t.textContent=Math.floor(left/3600)+':'+pad(Math.floor(left%3600/60))
+        +':'+pad(left%60)+' 남음';
+    });
+  }
+  if(timers.length){tick();setInterval(tick,1000)}
+
   var q=document.getElementById('q');
   var cards=[].slice.call(document.querySelectorAll('.card'));
   var sections=[].slice.call(document.querySelectorAll('section'));
