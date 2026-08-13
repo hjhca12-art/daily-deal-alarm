@@ -10,7 +10,7 @@
 <meta property="og:title" content="하루특가 알림 — 오늘의 특가 모음">
 <meta property="og:description" content="오늘 61건, 최대 84% 할인. 자정에 끝납니다.">
 <meta property="og:url" content="https://hjhca12-art.github.io/daily-deal-alarm/">
-<meta property="og:image" content="https://hjhca12-art.github.io/daily-deal-alarm/og.png?v=202608132022">
+<meta property="og:image" content="https://hjhca12-art.github.io/daily-deal-alarm/og.png?v=202608132046">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -164,6 +164,7 @@ footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
  .swipe{display:none}
 }
 </style>
+
 </head>
 <body>
 <div class="wrap">
@@ -1149,8 +1150,9 @@ footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
   </div>
 
   <footer>
-    마지막 업데이트 2026년 08월 13일 20:22<br>
-    가격과 재고는 판매처 사정으로 변경될 수 있습니다.
+    마지막 업데이트 2026년 08월 13일 20:46<br>
+    가격과 재고는 판매처 사정으로 변경될 수 있습니다.<br>
+    <a href="privacy.html">개인정보처리방침</a>
   </footer>
 </div>
 <script>
@@ -1193,6 +1195,22 @@ footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
   }
 
   q.addEventListener('input',apply);
+  // 어떤 상품이 실제로 눌리는지가 이 페이지의 유일한 성과 지표다.
+  // GA4 가 붙어 있을 때만 동작하고, 없으면 조용히 넘어간다.
+  if(window.gtag){
+    cards.forEach(function(c){
+      c.addEventListener('click',function(){
+        gtag('event','select_item',{
+          item_list_name:c.dataset.src,
+          item_name:(c.querySelector('.name')||{}).textContent,
+          item_category:c.dataset.cat
+        });
+      });
+    });
+    var kko=document.querySelector('.kko');
+    if(kko)kko.addEventListener('click',function(){gtag('event','join_group')});
+  }
+
   [].slice.call(document.querySelectorAll('.chip')).forEach(function(ch){
     ch.addEventListener('click',function(){
       [].slice.call(document.querySelectorAll('.chip'))
