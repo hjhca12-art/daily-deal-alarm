@@ -10,7 +10,7 @@
 <meta property="og:title" content="하루특가 알림 — 오늘의 특가 모음">
 <meta property="og:description" content="오늘 60건, 최대 84% 할인. 자정에 끝납니다.">
 <meta property="og:url" content="https://hjhca12-art.github.io/daily-deal-alarm/">
-<meta property="og:image" content="https://hjhca12-art.github.io/daily-deal-alarm/og.png?v=202608131916">
+<meta property="og:image" content="https://hjhca12-art.github.io/daily-deal-alarm/og.png?v=202608131935">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -55,8 +55,11 @@ h1 span{color:#25F0D4}
 /* 쇼핑몰을 좌우로 갈라 놓으면 어디로 넘어가는 링크인지 누르기 전에 알 수 있고,
    고지 문구도 몰별로 따로 붙일 수 있다. 좁은 화면에서도 2열을 유지하는 대신
    카드를 세로형(썸네일 위, 글 아래)으로 만들어 폭 170px 에서도 읽히게 한다. */
-.cols{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:start;
- margin-top:18px}
+/* 모바일 기본: 몰을 위아래로 쌓고 상품은 가로로 넘긴다.
+   좁은 화면에서 좌우 2열을 고집하면 카드가 167px 로 눌려 상품명이 안 읽힌다.
+   700px 부터는 아래 미디어쿼리에서 좌 토스 / 우 쿠팡 2열로 되돌린다. */
+.cols{margin-top:16px}
+.col+.col{margin-top:12px}
 /* 몰마다 테두리 색과 바탕을 다르게 준다. 스크롤 중에 어느 쪽을 보고 있는지
    글자를 읽지 않고도 알아야 오클릭이 안 난다. */
 .col{min-width:0;border:1px solid;border-radius:14px;overflow:hidden}
@@ -89,8 +92,17 @@ h1 span{color:#25F0D4}
  background:#FF6A00;color:#fff}
 .day .tag.old{background:#1d4149;color:#8FB3B8}
 .dayhint{margin-top:4px;color:#6f8f95;font-size:10px;line-height:1.45}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
-.col .grid{grid-template-columns:1fr}
+/* 가로 레일. 카드가 2.2개쯤 걸쳐 보이게 폭을 잡아 더 있다는 걸 알린다. */
+.grid{display:flex;gap:9px;margin-top:10px;padding-bottom:5px;
+ overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:none;
+ -webkit-overflow-scrolling:touch}
+.grid::-webkit-scrollbar{display:none}
+/* 150px 밑으로 내리면 배지가 두 줄로 깨진다. 대신 스와이프 힌트를 명시한다. */
+.grid>.card{flex:0 0 150px;scroll-snap-align:start}
+.swipe{margin-left:auto;font-size:10px;font-weight:700;color:#5d7d83;
+ white-space:nowrap}
+/* 레일이 컬럼 안쪽 여백에서 잘리지 않고 테두리까지 흘러가게 한다 */
+.col .grid,.feat .grid{margin-right:-9px;padding-right:9px}
 .card{display:block;padding:9px;background:#082228;border:1px solid #12343c;
  border-radius:13px;text-decoration:none;color:inherit;
  transition:border-color .15s}
@@ -137,6 +149,20 @@ h1 span{color:#25F0D4}
 .trk b.flat{color:#6f8f95}
 footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
  line-height:1.7}
+/* 700px 부터는 폭이 남으니 좌 토스 / 우 쿠팡 2열로 되돌리고
+   레일 대신 격자로 펼친다. 가로 스크롤은 마우스로 쓰기 불편하다. */
+@media(min-width:700px){
+ .wrap{max-width:940px}
+ .cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+ .col+.col{margin-top:0}
+ .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));
+  gap:10px;overflow:visible;padding-bottom:0}
+ .grid>.card{flex:none}
+ .col .grid,.feat .grid{margin-right:0;padding-right:0}
+ h1{font-size:34px}
+ .colnote{font-size:11px}
+ .swipe{display:none}
+}
 </style>
 </head>
 <body>
@@ -164,7 +190,7 @@ footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
   <div id="empty" class="empty">조건에 맞는 상품이 없습니다.</div>
 
   <section class="feat">
-    <div class="day"><h2>영상에서 소개한 상품</h2><span class="tag">12개</span></div>
+    <div class="day"><h2>영상에서 소개한 상품</h2><span class="tag">12개</span><span class="swipe">밀어서 더 보기 →</span></div>
     <div class="colnote">✱ 토스쇼핑 쉐어링크 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</div>
     <div class="dayhint">지난 날짜 상품은 가격이 바뀌었을 수 있어요.</div>
     <div class="grid">
@@ -334,7 +360,7 @@ footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
     </div>
     <div class="colbody">
       <section class="">
-        <div class="day"><h3>오늘</h3><span class="tag">진행 중</span></div>
+        <div class="day"><h3>오늘</h3><span class="tag">진행 중</span><span class="swipe">밀어서 더 보기 →</span></div>
         <div class="grid">
     <a class="card" data-cat="기타"
        data-name="이어맥 팬톤 커널형 블루투스 tws ptbt-300, 베이지, 1개"
@@ -763,7 +789,7 @@ footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
     </div>
     <div class="colbody">
       <section class="">
-        <div class="day"><h3>오늘</h3><span class="tag">진행 중</span></div>
+        <div class="day"><h3>오늘</h3><span class="tag">진행 중</span><span class="swipe">밀어서 더 보기 →</span></div>
         <div class="grid">
     <a class="card" data-cat="식품"
        data-name="토레타 이온음료"
@@ -1110,7 +1136,7 @@ footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
   </div>
 
   <footer>
-    마지막 업데이트 2026년 08월 13일 19:16<br>
+    마지막 업데이트 2026년 08월 13일 19:35<br>
     가격과 재고는 판매처 사정으로 변경될 수 있습니다.
   </footer>
 </div>
