@@ -10,7 +10,7 @@
 <meta property="og:title" content="하루특가 알림 — 오늘의 특가 모음">
 <meta property="og:description" content="오늘 60건, 최대 84% 할인. 자정에 끝납니다.">
 <meta property="og:url" content="https://hjhca12-art.github.io/daily-deal-alarm/">
-<meta property="og:image" content="https://hjhca12-art.github.io/daily-deal-alarm/og.png?v=202608131911">
+<meta property="og:image" content="https://hjhca12-art.github.io/daily-deal-alarm/og.png?v=202608131916">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -57,19 +57,32 @@ h1 span{color:#25F0D4}
    카드를 세로형(썸네일 위, 글 아래)으로 만들어 폭 170px 에서도 읽히게 한다. */
 .cols{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:start;
  margin-top:18px}
-.col{min-width:0}
-.colhead{padding:11px 12px;border-radius:12px 12px 0 0;
- border:1px solid #12343c;border-bottom:none;background:#08222899}
-.col.coupang .colhead{border-color:#3a2416;background:#1a0f0899}
+/* 몰마다 테두리 색과 바탕을 다르게 준다. 스크롤 중에 어느 쪽을 보고 있는지
+   글자를 읽지 않고도 알아야 오클릭이 안 난다. */
+.col{min-width:0;border:1px solid;border-radius:14px;overflow:hidden}
+.col.toss{border-color:#1a5c60;background:#04191d}
+.col.coupang{border-color:#63381d;background:#170e08}
+.colhead{padding:10px 11px 11px;border-top:3px solid;border-bottom:1px solid}
+.col.toss .colhead{border-top-color:#25F0D4;border-bottom-color:#12343c;
+ background:linear-gradient(#0c2f34,#082228)}
+.col.coupang .colhead{border-top-color:#FF6A00;border-bottom-color:#3a2416;
+ background:linear-gradient(#2c1a11,#1a0f08)}
 .colhead h2{font-size:13.5px;font-weight:800;letter-spacing:-.02em;
- display:flex;align-items:center;gap:6px}
+ display:flex;align-items:center;gap:5px}
+.colhead h2 i{width:8px;height:8px;border-radius:2px;flex:0 0 auto}
+.col.toss h2 i{background:#25F0D4}
+.col.coupang h2 i{background:#FF6A00}
 .colhead h2 em{font-style:normal;font-size:11px;font-weight:700;color:#5d7d83}
 .col.toss .colhead h2{color:#25F0D4}
 .col.coupang .colhead h2{color:#FF8A3D}
 /* 몰별 고지. 두 몰의 수수료 주체가 달라서 한 문장으로 묶으면 안 된다. */
 .colnote{margin-top:7px;font-size:10px;line-height:1.5;color:#6f8f95;
  word-break:keep-all}
-.colbody{padding:2px 0 10px}
+.colbody{padding:0 9px 11px}
+.col.coupang .card{background:#1d1109;border-color:#3f2617}
+.col.coupang .card:hover{border-color:#FF8A3D}
+.col.coupang .track{border-top-color:#3f2617}
+.col.coupang .day h3{color:#e8a37a}
 .day{margin:16px 0 2px;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
 .day h2,.day h3{font-size:12.5px;font-weight:800;letter-spacing:-.01em}
 .day .tag{font-size:9.5px;font-weight:700;padding:2px 7px;border-radius:999px;
@@ -104,6 +117,15 @@ h1 span{color:#25F0D4}
  background:#FF6A00;color:#fff;font-size:9.5px;font-weight:800;
  letter-spacing:-.01em}
 .badge.low{background:#25F0D4;color:#03161A}
+/* 영상 구획은 좌우 컬럼 밖이라 어느 몰인지 알 수 없다. 거기서만 몰을 표기한다. */
+.badge.src{background:#12343c;color:#8FB3B8;font-weight:700}
+.badge.src.coupang{background:#3f2617;color:#e8a37a}
+/* 영상 구획은 몰이 아니라 채널의 구획이라 두 색을 같이 쓴다 */
+.feat{position:relative;border:1px solid #21454c;border-radius:14px;
+ padding:15px 9px 12px;background:#0a2126;margin-top:8px;overflow:hidden}
+.feat::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;
+ background:linear-gradient(90deg,#25F0D4,#FF6A00)}
+.feat .day{margin-top:0}
 /* ── 가격 추적 ── 한 번 본 가격은 계속 들고 있으니 지금이 싼지 말할 수 있다 */
 .track{margin-top:7px;padding-top:7px;border-top:1px dashed #163b44;
  display:flex;align-items:center;gap:7px}
@@ -152,7 +174,7 @@ footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
        href="https://toss.im/_m/xn9PhT1B" target="_blank" rel="nofollow noopener">
       <img class="thumb" src="https://shopping.toss.im/live/taca/ai/ZTBkMWM0/TFozaG1EbkdISmFXbXVWVVl6Qnh6azB6VGtsbVFlTXRtVHlPRWpqbGltcz0.png" alt="" loading="lazy">
       <div class="body">
-        <div class="badges"><span class="badge">▶ 영상에서 본 그 제품</span></div>
+        <div class="badges"><span class="badge">▶ 영상에서 본 그 제품</span><span class="badge src toss">토스</span></div>
         <div class="name">이프레시 국내산 대추 방울 토마토, 4번과, 2kg, 1개</div>
         <div class="row"><span class="rate">58%</span><span class="price">7,900원</span><span class="was">18,900원</span></div>
         <div class="meta">★ 4.4 · 리뷰 3,351개</div>
@@ -165,7 +187,7 @@ footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
        href="https://toss.im/_m/rAXjh9xj" target="_blank" rel="nofollow noopener">
       <img class="thumb" src="https://shopping.toss.im/live/taca/ai/OWQ0OTE5/Wkh0K2FiSlFPMFpnZFBybFJlVnBLYzNKT01hdTF1cXlueGV2c1ZVYTVjaz0.png" alt="" loading="lazy">
       <div class="body">
-        <div class="badges"><span class="badge">▶ 영상에서 본 그 제품</span></div>
+        <div class="badges"><span class="badge">▶ 영상에서 본 그 제품</span><span class="badge src toss">토스</span></div>
         <div class="name">맛꾼 뼈없는 한돈 양념갈비, 300g, 5팩</div>
         <div class="row"><span class="rate">53%</span><span class="price">19,900원</span><span class="was">42,500원</span></div>
         <div class="meta">★ 4.3 · 리뷰 3,587개</div>
@@ -178,7 +200,7 @@ footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
        href="https://toss.im/_m/hsB5FO0q" target="_blank" rel="nofollow noopener">
       <img class="thumb" src="https://shopping.toss.im/live/taca/ai/M2QwNWIy/VkptSmpsNlRxU2JFM3BHa1d3cWZkU05aTmt5K29YWmUxRG92VnVSN3ZTYz0.png" alt="" loading="lazy">
       <div class="body">
-        <div class="badges"><span class="badge">▶ 영상에서 본 그 제품</span></div>
+        <div class="badges"><span class="badge">▶ 영상에서 본 그 제품</span><span class="badge src toss">토스</span></div>
         <div class="name">가람상점 완숙 찰 토마토 못난이 주스용, 랜덤과, 5kg, 1개</div>
         <div class="row"><span class="rate">50%</span><span class="price">9,800원</span><span class="was">19,900원</span></div>
         <div class="meta">★ 4.5 · 리뷰 3,803개</div>
@@ -191,7 +213,7 @@ footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
        href="https://toss.im/_m/F36sRmLo" target="_blank" rel="nofollow noopener">
       <img class="thumb" src="https://shopping.toss.im/live/taca/ai/MzFmZTZk/YWVocVE5Tm9ULzR1bDdXc0pwR21ROWwrUzFxYlBsVzg1RUdrb2UxVTIxWT0.png" alt="" loading="lazy">
       <div class="body">
-        <div class="badges"><span class="badge">▶ 영상에서 본 그 제품</span></div>
+        <div class="badges"><span class="badge">▶ 영상에서 본 그 제품</span><span class="badge src toss">토스</span></div>
         <div class="name">비로르 304 스텐 주방 가위, 팬더, 20.5cm, 2개</div>
         <div class="row"><span class="rate">82%</span><span class="price">5,700원</span><span class="was">17,900원</span></div>
         <div class="meta">★ 4.4 · 리뷰 6,233개</div>
@@ -204,7 +226,7 @@ footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
        href="https://toss.im/_m/dHfEpES5" target="_blank" rel="nofollow noopener">
       <img class="thumb" src="https://shopping.toss.im/live/taca/ai/YjU1NGZj/VldrR1ByVjJjV1c1UmF0MW1rM0dEM1doVXZRUzFrYTJhcmFxaWtXcGxVcz0.png" alt="" loading="lazy">
       <div class="body">
-        <div class="badges"><span class="badge">▶ 영상에서 본 그 제품</span></div>
+        <div class="badges"><span class="badge">▶ 영상에서 본 그 제품</span><span class="badge src toss">토스</span></div>
         <div class="name">청년들기름, 350ml, 2개</div>
         <div class="row"><span class="rate">47%</span><span class="price">17,800원</span><span class="was">33,900원</span></div>
         <div class="meta">★ 4.7 · 리뷰 4,062개</div>
@@ -217,7 +239,7 @@ footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
        href="https://toss.im/_m/bMr4AjT5" target="_blank" rel="nofollow noopener">
       <img class="thumb" src="https://shopping.toss.im/live/taca/ai/Mjc2NTI3/QUtNUHExVXZRM2NHMk5SVW5uSzRuaVhlWTlDVHVjci93cDROR0E5d3RLWDg.png" alt="" loading="lazy">
       <div class="body">
-        <div class="badges"><span class="badge">▶ 영상에서 본 그 제품</span></div>
+        <div class="badges"><span class="badge">▶ 영상에서 본 그 제품</span><span class="badge src toss">토스</span></div>
         <div class="name">크리넥스 울트라클린, 3겹, 25m, 24롤, 2팩</div>
         <div class="row"><span class="rate">42%</span><span class="price">23,900원</span><span class="was">41,300원</span></div>
         <div class="meta">★ 4.7 · 리뷰 5,598개</div>
@@ -230,7 +252,7 @@ footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
        href="https://toss.im/_m/ZGKyme72" target="_blank" rel="nofollow noopener">
       <img class="thumb" src="https://shopping.toss.im/live/product/41586725/f4a8f5ac-967a-4481-9a42-4126410f6dc3.jpeg" alt="" loading="lazy">
       <div class="body">
-        <div class="badges"><span class="badge">▶ 영상에서 본 그 제품</span></div>
+        <div class="badges"><span class="badge">▶ 영상에서 본 그 제품</span><span class="badge src toss">토스</span></div>
         <div class="name">국내산 한돈 돼지 등갈비, 1kg, 1개</div>
         <div class="row"><span class="rate">47%</span><span class="price">13,500원</span><span class="was">25,900원</span></div>
         <div class="meta">★ 4.1 · 리뷰 6,890개</div>
@@ -243,7 +265,7 @@ footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
        href="https://toss.im/_m/Z6neROT1" target="_blank" rel="nofollow noopener">
       <img class="thumb" src="https://shopping.toss.im/live/taca/ai/ZGY0Yjk4/VFc5cTJkMHNyZFA3SjNaYlBJVWN5OXdVankremgxS1VTc01vVlNVeHRlZz0.png" alt="" loading="lazy">
       <div class="body">
-        <div class="badges"><span class="badge">▶ 영상에서 본 그 제품</span></div>
+        <div class="badges"><span class="badge">▶ 영상에서 본 그 제품</span><span class="badge src toss">토스</span></div>
         <div class="name">오브쿡스 리파인 스텐 304 양면도마, 실버, 365x260x20mm, 1개</div>
         <div class="row"><span class="rate">71%</span><span class="price">12,900원</span><span class="was">44,500원</span></div>
         <div class="meta">★ 4.6 · 리뷰 401개</div>
@@ -256,7 +278,7 @@ footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
        href="https://toss.im/_m/NvVHPsbi" target="_blank" rel="nofollow noopener">
       <img class="thumb" src="https://shopping.toss.im/live/temp/2025-07-21/93a16065-9d8e-4a9a-83c8-c07c8cca1f2d.png" alt="" loading="lazy">
       <div class="body">
-        <div class="badges"><span class="badge">▶ 영상에서 본 그 제품</span></div>
+        <div class="badges"><span class="badge">▶ 영상에서 본 그 제품</span><span class="badge src toss">토스</span></div>
         <div class="name">푸드센터 소갈비살, 200g, 5팩</div>
         <div class="row"><span class="rate">73%</span><span class="price">26,900원</span><span class="was">100,000원</span></div>
         <div class="meta">★ 4.3 · 리뷰 1,981개</div>
@@ -269,7 +291,7 @@ footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
        href="https://toss.im/_m/FrfvyPr4" target="_blank" rel="nofollow noopener">
       <img class="thumb" src="https://shopping.toss.im/live/taca/ai/OGYwNTBl/QUlsTXpubVdiTzlOYTB4WXpkbHNtUTR4MlRtc0xZMzJzSVkxaDd6N1JGcEQ.png" alt="" loading="lazy">
       <div class="body">
-        <div class="badges"><span class="badge">▶ 영상에서 본 그 제품</span></div>
+        <div class="badges"><span class="badge">▶ 영상에서 본 그 제품</span><span class="badge src toss">토스</span></div>
         <div class="name">당연구소 귀리뻥, 40g, 10봉</div>
         <div class="row"><span class="rate">77%</span><span class="price">8,900원</span><span class="was">40,000원</span></div>
         <div class="meta">★ 4.5 · 리뷰 202개</div>
@@ -282,7 +304,7 @@ footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
        href="https://toss.im/_m/fUR4fMlB" target="_blank" rel="nofollow noopener">
       <img class="thumb" src="https://shopping.toss.im/live/taca/ai/v2/YTUyZjk2/S1YyaXdQcEJwZTAxK29mcUM4ZjlZVWw1V0dGc29hRTVWRENEeDA1ZXUyWT0.png" alt="" loading="lazy">
       <div class="body">
-        <div class="badges"><span class="badge">▶ 영상에서 본 그 제품</span></div>
+        <div class="badges"><span class="badge">▶ 영상에서 본 그 제품</span><span class="badge src toss">토스</span></div>
         <div class="name">애슐리 볶음밥 올인원 10종 세트, 1개</div>
         <div class="row"><span class="rate">58%</span><span class="price">18,990원</span><span class="was">45,900원</span></div>
         <div class="meta">★ 4.7 · 리뷰 7,634개</div>
@@ -295,7 +317,7 @@ footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
        href="https://toss.im/_m/15br1Por" target="_blank" rel="nofollow noopener">
       <img class="thumb" src="https://shopping.toss.im/live/taca/ai/YjU1MmE4/QUtVeU0xTG5NaDVqRnNRUW5lV203VVRBMHdER0J6YzdTMTZPWVQrT0lJLzg.png" alt="" loading="lazy">
       <div class="body">
-        <div class="badges"><span class="badge">▶ 영상에서 본 그 제품</span></div>
+        <div class="badges"><span class="badge">▶ 영상에서 본 그 제품</span><span class="badge src toss">토스</span></div>
         <div class="name">외갓집 1분 30초 통등심 돈까스, 650g, 1팩</div>
         <div class="row"><span class="rate">52%</span><span class="price">9,990원</span><span class="was">21,000원</span></div>
         <div class="meta">★ 4.6 · 리뷰 892개</div>
@@ -307,7 +329,7 @@ footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
   <div class="cols">
   <div class="col toss">
     <div class="colhead">
-      <h2>토스쇼핑 <em>32</em></h2>
+      <h2><i></i>토스쇼핑 <em>32</em></h2>
       <div class="colnote">✱ 토스쇼핑 쉐어링크 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</div>
     </div>
     <div class="colbody">
@@ -736,7 +758,7 @@ footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
   </div>
   <div class="col coupang">
     <div class="colhead">
-      <h2>쿠팡 골드박스 <em>26</em></h2>
+      <h2><i></i>쿠팡 골드박스 <em>26</em></h2>
       <div class="colnote">✱ 이 페이지는 쿠팡파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</div>
     </div>
     <div class="colbody">
@@ -1088,7 +1110,7 @@ footer{margin-top:36px;text-align:center;color:#5d7d83;font-size:11px;
   </div>
 
   <footer>
-    마지막 업데이트 2026년 08월 13일 19:11<br>
+    마지막 업데이트 2026년 08월 13일 19:16<br>
     가격과 재고는 판매처 사정으로 변경될 수 있습니다.
   </footer>
 </div>
